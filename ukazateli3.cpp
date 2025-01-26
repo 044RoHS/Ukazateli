@@ -2,10 +2,23 @@
 
 int reverse(int* a, int size) 
 {
-	for (size ; size > 0 ; size-- ) 
+	int i = 0; // First Element of the array
+	int b = size - 1; // Last 
+		 
+	while (i < b ) 
 	{
-		std:: cout << a[size-1]<< " ";
+		int temp = a[i];
+		a[i] = a[b];
+		a[b] = temp;
+		i++;
+		b--;
+
 	}
+	for (int x = 0; x < size;x++) 
+	{
+		std::cout << a[x] << " ";
+	}
+	
 	return 0;
 }
 
@@ -22,6 +35,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << "После функции reverse: ";
 	reverse(array, size);
+	
 	
 	
 }
